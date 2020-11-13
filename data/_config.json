@@ -1,0 +1,10 @@
+{
+    "port": 9898,
+    "host": "0.0.0.0",
+    "routes": "./data/_router.json",
+    "middlewares": [
+      "./data/middlewares/_postAsGet.js",
+      "./data/middlewares/_decodeChinese.js"
+    ],
+    "delay": 800
+  }

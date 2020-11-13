@@ -7,16 +7,20 @@
 
 ## Run it
 run it by `forever start -c "npm start" ./`
+You can put some .json in `/data/gogo/poem.json`
+And look it like use `http://localhost:port/gogo/poem?author_like=`
 
 ** And you need modify some code in `json-server/src/cli/utils/load.js` for Promise db.js for Now json-server:  0.16.2**
-isJS
+in end of else isJS 
 ```js
-  let data = dataFn();
-  if ( typeof data.then == 'function' ) {
-    data = data.then(res => {
-      return resolve(low(new Memory()).setState(res));
-    })
-  } else {
-    resolve(low(new Memory()).setState(data));
-  }
+      // const data = dataFn();
+      // resolve(low(new Memory()).setState(data));
+      let data = dataFn();
+      if ( typeof data.then == 'function' ) {
+        data = data.then(res => {
+          return resolve(low(new Memory()).setState(res));
+        })
+      } else {
+        resolve(low(new Memory()).setState(data));
+      }
 ```

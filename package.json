@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch data --exec 'json-server ./data/_db.js -c ./data/_config.json'"
+    "start": "nodemon --watch data --exec 'json-server ./data/_db.js -c ./data/_config.json' --exitcrash",
+    "data": "nodemon --watch data --exec 'json-server ./data/_db.js -c ./data/_config.json' --exitcrash",
+    "json": "json-server ./data/_db.js -c ./data/_config.json"
   },
   "author": "Roro",
   "devDependencies": {

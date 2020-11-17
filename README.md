@@ -8,7 +8,9 @@
 ## Run it
 run it by `forever start -c "npm start" ./`
 
-You can put some .json in `/data/gogo/poem.json`
+I put data in `../json-data/data`
+If you change `nodemon --watch path` in package.json, You need modify _db.js too.
+You can put some .json in `../json-data/data/gogo/poem.json`
 
 And look it like use `http://localhost:port/gogo/poem?author_like=`
 
@@ -26,4 +28,11 @@ in end of else isJS
       } else {
         resolve(low(new Memory()).setState(data));
       }
+```
+
+And forever stop cannot stop json-server.
+Maybe you need
+```bash
+lsof -i:9898
+sudo kill -9 PID
 ```
